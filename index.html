@@ -3,13 +3,62 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="./src/output.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="./src/main.css" />
+
+  <!-- Google icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
   <title>Teste Irroba Front-end</title>
 </head>
 
 <body>
-  <div id="app"></div>
+  <div class="bg-slate-200 min-h-[calc(100vh)] flex flex-col">
+    <header>
+      <nav class="navbar flex justify-between py-4 px-8 bg-slate-100 text-slate-700 font-medium">
+        <a href="">
+          LOGO
+        </a>
+
+        <div class="flex gap-8">
+          <ul class="navbar__list flex gap-4 cursor-pointer underline-offset-4">
+            <li class="hover:text-slate-950 hover:underline">Inicio</li>
+            <li class="hover:text-slate-950 hover:underline">Femino</li>
+            <li class="hover:text-slate-950 hover:underline">Masculino</li>
+            <li class="hover:text-slate-950 hover:underline">Infantíl</li>
+            <li class="hover:text-slate-950 hover:underline">Acessórios</li>
+          </ul>
+  
+          <span class="material-symbols-outlined cursor-pointer hover:text-slate-950">
+            shopping_cart
+          </span>
+
+          <span class="material-symbols-outlined cursor-pointer hover:text-slate-950">
+            person
+          </span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <swiper-container speed="500" loop="true">
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+      </swiper-container>
+
+      <div class="showcase">
+
+      </div>
+    </main>
+
+    <footer class="h-20 bg-slate-100 p-8">
+      <!-- TODO: make it -->
+      Rodapé
+    </footer>
+  </div>
+
   <script type="module" src="/src/main.ts"></script>
 </body>
 

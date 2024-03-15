@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .showcase {
+    @apply flex gap-8 justify-center
+  }
+
+  .product-showcase__container {
+    @apply bg-slate-50 shadow-md hover:shadow-xl p-4 rounded-md w-56 h-60
+  }
+
+}
