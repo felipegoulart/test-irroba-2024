@@ -3,12 +3,106 @@
 @tailwind utilities;
 
 @layer components {
+  .navbar__container {
+    @apply 
+      bg-slate-50
+      flex
+      font-medium
+      justify-between
+      px-8
+      py-4
+      text-slate-700
+  }
+  .navbar__right-container {
+    @apply flex gap-8
+  }
+
+  .navbar__link-list {
+    @apply 
+      cursor-pointer
+      flex
+      gap-4
+      underline-offset-4
+  }
+
+  .navbar__page-link {
+    @apply 
+      cursor-pointer
+      flex
+      gap-4
+      hover:underline
+      underline-offset-4
+  }
+
   .showcase {
-    @apply flex gap-8 justify-center
+    @apply 
+      flex
+      flex-col
+      gap-8
+      p-6
+      px-20
+  }
+
+  .showcase__category {
+    @apply 
+      flex
+      flex-col
+      gap-4
+  }
+
+  .showcase__category-title {
+    @apply 
+      font-bold
+      text-3xl
+      text-slate-500
+  }
+  
+  .showcase__product-list {
+    @apply flex gap-8 
   }
 
   .product-showcase__container {
-    @apply bg-slate-50 shadow-md hover:shadow-xl p-4 rounded-md w-56 h-60
+    @apply 
+      bg-slate-50
+      cursor-pointer
+      flex
+      flex-col 
+      gap-2
+      h-72
+      hover:shadow-xl
+      p-4
+      rounded-md
+      shadow-md
+      text-slate-700
+      w-56
   }
 
+  .product-showcase__image-container {
+    @apply 
+      flex
+      h-32
+      justify-center
+  }
+
+  .product-showcase__image {
+    @apply h-full
+  }
+
+  .product-showcase__title {
+    @apply font-bold line-clamp-2
+  }
+
+  .product-showcase__rating-container {
+    @apply 
+      flex
+      gap-2
+      text-sm
+  }
+
+  .product-showcase__price {
+    @apply 
+      text-2xl
+      font-bold
+      text-slate-800
+  }
 }
