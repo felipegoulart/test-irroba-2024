@@ -16,7 +16,9 @@ async function fetchProductByID (id: string | number): Promise<Product> {
 }
 
 async function setCategories (): Promise<void> {
-  categories = await api.get('products/categories')
+  const { data } = await api.get('products/categories')
+
+  categories = data
 }
 
 export {

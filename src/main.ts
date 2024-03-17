@@ -1,21 +1,28 @@
 // import components
 import '@manufosela/stars-rating'
-import { register } from 'swiper/element/bundle'
-import { setupShowCase, setupNavbar } from './components'
+import { setupShowcase, setupNavbar, setupeHeaderBanners } from './components'
 import { categories, setCategories } from './store'
+import { categoriesMapper } from './utils'
 
-// register Swiper custom elements
-register()
+// import Swiper and modules styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // Configura os componentes
-await setupNavbar()
-
 await (async () => {
   await setCategories()
 
+  await setupNavbar(categories)
+
+  setupeHeaderBanners()
+
   try {
-    await setupShowCase('products/category/jewelery', 'Joias')
-    // await Promise.allSettled()
+    const showcases = categories.map((category: string): any => {
+      return setupShowcase(`products/category/${category}`, categoriesMapper[category] as string)
+    })
+
+    await Promise.allSettled(showcases)
   } catch (e) {
     console.error(e)
   }

@@ -1,7 +1,6 @@
-import { api } from '../api'
 import { categoriesMapper } from '../utils/mappers'
 
-export async function setupNavbar (): Promise<void> {
+export async function setupNavbar (categories: string[]): Promise<void> {
   const navbarHeaderAnchor: HTMLHeadingElement | null = document.querySelector('.navbar')
 
   // Anexa ao header.navbar os elementos raiz que compõe a barra de navegação.
@@ -34,9 +33,7 @@ export async function setupNavbar (): Promise<void> {
     userElement.innerText = 'person'
   }
 
-  const { data } = await api.get('products/categories')
-
-  data.forEach((category: string): void => {
+  categories.forEach((category: string): void => {
     const pageItemElement = pageLinkListElement?.appendChild(document.createElement('li'))
     const linkElement = pageItemElement?.appendChild(document.createElement('a'))
 

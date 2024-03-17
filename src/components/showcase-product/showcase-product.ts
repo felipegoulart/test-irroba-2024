@@ -1,5 +1,6 @@
-import { type Product } from '../types'
-import { parseToBRL } from '../utils'
+import { type Product } from '../../types'
+import { parseToBRL } from '../../utils'
+import './style.css'
 
 export function setupProductShowcase (product: Product): HTMLDivElement {
   const containerElement = document.createElement('div')
@@ -12,6 +13,8 @@ export function setupProductShowcase (product: Product): HTMLDivElement {
 
   const rateStarsElement = ratingContainerElement.appendChild(document.createElement('stars-rating'))
   const rateCountElement = ratingContainerElement.appendChild(document.createElement('span'))
+
+  containerElement.classList.add('product-showcase__container')
 
   imageElement.setAttribute('src', product.image)
   imageContainerElement.classList.add('product-showcase__image-container')
@@ -30,10 +33,6 @@ export function setupProductShowcase (product: Product): HTMLDivElement {
   rateStarsElement.setAttribute('rating', String(product.rating.rate))
 
   rateCountElement.innerText = `(${product.rating.count})`
-
-  console.log(product)
-
-  containerElement.classList.add('product-showcase__container')
 
   return containerElement
 }
