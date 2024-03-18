@@ -1,0 +1,21 @@
+# Teste Irroba - Felipe Goulart
+
+## Requisitos para rodar o teste
+
+- Node >= v18
+
+## Como rodar
+
+- Rode os comando a seguir na raiz do projeto
+- `npm install`
+- `npm run dev`
+
+## Ferramentas utilizadas
+
+- Vite: gerenciar ambiente de desenvolvimento e build do projeto
+- Typescript: auxiliar na qualidade do código
+- Tailwind: estilização
+- Swiper: carrosel
+- Axios: requisições http para consumo da API
+- ESlint: garantir estilo do código
+- manufosela/stars-rating: estrelas de avaliação do produto
