@@ -55,5 +55,9 @@
       font-bold
       text-3xl
       text-slate-500
-  }  
+  }
+
+  .footer__link {
+    @apply hover:text-orange-400
+  }
 }
