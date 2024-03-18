@@ -1,41 +1,35 @@
-interface IScreen {
-  screenSize: number
-  callback?: () => void
-  isMobile: () => boolean
-  isMedium: () => boolean
-  isLarge: () => boolean
+let screenSize: number = window.innerWidth
+let oldScreenSize: number = window.innerWidth
+
+function setupScreenObserver (callback?: any): void {
+  addEventListener('resize', (): void => {
+    // Faz cache do tamanho da tela
+    oldScreenSize = screenSize
+
+    screenSize = window.innerWidth
+
+    callback?.(screenSize, oldScreenSize)
+  })
 }
 
-export class Screen implements IScreen {
-  screenSize: number
-  readonly callback
+function isMobile (value: number): boolean {
+  return value < 360
+}
 
-  constructor (callback: any) {
-    this.callback = callback
+function isMedium (value: number): boolean {
+  return value > 360 && value < 1023
+}
 
-    // Inicia o screensize com o tamanho da tela
-    this.screenSize = window.innerWidth
+function isLarge (value: number): boolean {
+  return value > 1024
+}
 
-    addEventListener('resize', (): void => {
-      this.screenSize = window.innerWidth
+export {
+  screenSize,
+  oldScreenSize,
 
-      this.callback?.(this)
-    })
-  }
-
-  public isMobile (): boolean {
-    return this.screenSize < 360
-  }
-
-  public isMedium (): boolean {
-    return this.screenSize > 360 && this.screenSize < 1023
-  }
-
-  public isLarge (): boolean {
-    return this.screenSize > 1024
-  }
-
-  init (): void {
-    this.callback(this)
-  }
+  isLarge,
+  isMedium,
+  isMobile,
+  setupScreenObserver
 }
