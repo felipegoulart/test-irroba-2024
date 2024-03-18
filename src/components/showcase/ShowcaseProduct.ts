@@ -1,6 +1,5 @@
 import { type Product } from '../../types'
 import { parseToBRL } from '../../utils'
-import './style.css'
 
 export function setupProductShowcase (product: Product): HTMLDivElement {
   const containerElement = document.createElement('div')
@@ -14,20 +13,20 @@ export function setupProductShowcase (product: Product): HTMLDivElement {
   const rateStarsElement = ratingContainerElement.appendChild(document.createElement('stars-rating'))
   const rateCountElement = ratingContainerElement.appendChild(document.createElement('span'))
 
-  containerElement.classList.add('product-showcase__container')
+  containerElement.classList.add('showcase-product__container')
 
   imageElement.setAttribute('src', product.image)
-  imageContainerElement.classList.add('product-showcase__image-container')
-  imageElement.classList.add('product-showcase__image')
+  imageContainerElement.classList.add('showcase-product__image-container')
+  imageElement.classList.add('showcase-product__image')
 
   titleElement.innerText = product.title
-  titleElement.classList.add('product-showcase__title')
+  titleElement.classList.add('showcase-product__title')
 
   priceElement.innerText = parseToBRL(product.price)
-  priceElement.classList.add('product-showcase__price')
+  priceElement.classList.add('showcase-product__price')
 
   // Estilização e configuração da avaliação do produto
-  ratingContainerElement.classList.add('product-showcase__rating-container')
+  ratingContainerElement.classList.add('showcase-product__rating-container')
   rateStarsElement.style.setProperty('font-size', '1rem')
   rateStarsElement.setAttribute('numstars', '5')
   rateStarsElement.setAttribute('rating', String(product.rating.rate))

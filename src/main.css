@@ -76,6 +76,51 @@
       text-slate-500
   }
 
+  .showcase-product__container {
+    @apply 
+      bg-slate-50
+      cursor-pointer
+      flex
+      flex-col
+      gap-2
+      h-72
+      hover:shadow-xl
+      p-4
+      rounded-md
+      shadow-md
+      text-slate-700
+      w-56
+  }
+  
+  .showcase-product__image-container {
+    @apply 
+      flex
+      h-32
+      justify-center
+  }
+  
+  .showcase-product__image {
+    @apply h-full
+  }
+  
+  .showcase-product__title {
+    @apply font-bold line-clamp-2
+  }
+  
+  .showcase-product__rating-container {
+    @apply 
+      flex
+      gap-2
+      text-sm
+  }
+  
+  .showcase-product__price {
+    @apply 
+      text-2xl
+      font-bold
+      text-slate-800
+  }
+
   .footer__link {
     @apply hover:text-orange-400
   }

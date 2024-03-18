@@ -1,8 +1,8 @@
 import Swiper from 'swiper'
 
-import { api } from '../api'
-import { setupProductShowcase } from './showcase-product/showcase-product'
-import { type Product } from '../types'
+import { api } from '../../api'
+import { setupProductShowcase } from './ShowcaseProduct'
+import { type Product } from '../../types'
 
 export async function setupShowcase (path: string, title: string): Promise<void> {
   const { data } = await api.get(path)
@@ -21,12 +21,12 @@ export async function setupShowcase (path: string, title: string): Promise<void>
   productSliderElement.appendChild(swiperWrapperElement)
 
   categoryShowcaseElement.classList.add('showcase__category')
-  productSliderElement.classList.add('showcase__product-', 'swiper')
+  productSliderElement.classList.add('swiper')
   swiperWrapperElement.classList.add('showcase__product-list', 'swiper-wraper')
+  titleShowcaseCategoryElement.classList.add('showcase__category-title')
 
   const swiper = new Swiper(categoryShowcaseElement)
 
-  titleShowcaseCategoryElement.classList.add('showcase__category-title')
   titleShowcaseCategoryElement.innerText = title
   titleShowcaseCategoryElement.innerText = title
 
