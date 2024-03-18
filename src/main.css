@@ -98,7 +98,13 @@
       flex-col
       gap-8
       p-6
-      px-20
+      px-4
+      sm:px-8
+      md:px-12
+      lg:px-16
+      xl:px-0
+      xl:max-w-screen-xl
+      xl:mx-auto
   }
 
   .showcase__category {
@@ -115,6 +121,18 @@
       text-slate-500
   }
 
+  .showcase__product-list {
+    @apply
+      flex
+      flex-wrap
+      gap-y-12
+      gap-x-4
+      justify-center
+      md:gap-6
+      lg:justify-start
+      lg:gap-4
+  }
+
   .showcase-product__container {
     @apply 
       bg-slate-50
@@ -128,7 +146,9 @@
       rounded-md
       shadow-md
       text-slate-700
-      w-56
+      w-full
+      sm:w-72
+      lg:w-56
   }
   
   .showcase-product__image-container {
