@@ -43,7 +43,9 @@ export async function setupNavbar (): Promise<void> {
     linkElement.innerText = categoriesMapper[category]
   })
 
-  function setNavbarByScreenSize (isSmallScreen: boolean): void {
+  const isSmallScreen = isMobile(screenSize) || isMedium(screenSize)
+
+  function setNavbarByScreenSize (): void {
     isSmallScreen
       ? setupMobileNavbar(rightContainerElement, linkListElement)
       : setupDesktopNavbar(rightContainerElement, linkListElement)
@@ -61,11 +63,9 @@ export async function setupNavbar (): Promise<void> {
 
     if (isSameScreenSize) return
 
-    setNavbarByScreenSize(isSmallScreen)
+    setNavbarByScreenSize()
   })
 
-  const isSmallScreen = isMobile(screenSize) || isMedium(screenSize)
-
   // Inicia o menu de acordo com o tamanho da tela.
-  setNavbarByScreenSize(isSmallScreen)
+  setNavbarByScreenSize()
 }
