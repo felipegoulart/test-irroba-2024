@@ -6,14 +6,13 @@ import { categoriesMapper } from './utils'
 
 // import Swiper and modules styles
 import 'swiper/css'
-import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 // Configura os componentes
 await (async () => {
   await setCategories()
 
-  await setupNavbar(categories)
+  await setupNavbar()
 
   setupeHeaderBanners()
 
