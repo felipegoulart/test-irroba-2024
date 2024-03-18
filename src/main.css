@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 @layer components {
+  .app {
+    @apply 
+      bg-slate-100
+      min-h-[calc(100vh)]
+      flex
+      flex-col
+      relative
+  }
+
+  .navbar {
+    @apply 
+      fixed
+      shadow-md 
+      w-full
+      z-50 
+  }
+
   .navbar__container {
     @apply 
       bg-slate-50
@@ -13,6 +30,7 @@
       py-4
       text-slate-700
   }
+
   .navbar__right-container {
     @apply flex gap-8
   }
@@ -31,6 +49,7 @@
       flex
       gap-4
       hover:underline
+      hover:text-orange-400
       underline-offset-4
   }
 
