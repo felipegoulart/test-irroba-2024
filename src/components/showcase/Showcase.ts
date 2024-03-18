@@ -1,5 +1,3 @@
-import Swiper from 'swiper'
-
 import { api } from '../../api'
 import { setupProductShowcase } from './ShowcaseProduct'
 import { type Product } from '../../types'
@@ -11,26 +9,23 @@ export async function setupShowcase (path: string, title: string): Promise<void>
 
   const categoryShowcaseElement = document.createElement('div')
   const titleShowcaseCategoryElement = document.createElement('h2')
-  const productSliderElement = document.createElement('div')
-  const swiperWrapperElement = document.createElement('div')
+  const productListElement = document.createElement('div')
 
   showcaseElement?.appendChild(categoryShowcaseElement)
-  categoryShowcaseElement.appendChild(productSliderElement)
+
   categoryShowcaseElement.appendChild(titleShowcaseCategoryElement)
-  categoryShowcaseElement.appendChild(titleShowcaseCategoryElement)
-  productSliderElement.appendChild(swiperWrapperElement)
+  categoryShowcaseElement.appendChild(productListElement)
 
   categoryShowcaseElement.classList.add('showcase__category')
-  productSliderElement.classList.add('swiper')
-  swiperWrapperElement.classList.add('showcase__product-list', 'swiper-wraper')
+
   titleShowcaseCategoryElement.classList.add('showcase__category-title')
 
-  const swiper = new Swiper(categoryShowcaseElement)
-
-  titleShowcaseCategoryElement.innerText = title
-  titleShowcaseCategoryElement.innerText = title
+  productListElement.classList.add('showcase__product-list')
 
   data?.forEach((product: Product) => {
-    productSliderElement.appendChild(setupProductShowcase(product))
+    productListElement.appendChild(setupProductShowcase(product))
   })
+
+  titleShowcaseCategoryElement.innerText = title
+  titleShowcaseCategoryElement.innerText = title
 }
