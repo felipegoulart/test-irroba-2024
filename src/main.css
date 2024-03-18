@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.scroll--disabled {
+  overflow: hidden;   
+}
+
 @layer components {
   .app {
     @apply 
@@ -51,6 +55,41 @@
       hover:underline
       hover:text-orange-400
       underline-offset-4
+  }
+
+  .navbar-dialog {
+    @apply 
+      bg-slate-100
+      h-[calc(100vh)] 
+      p-8
+      pt-4
+      text-slate-700
+      top-0
+      w-full
+  }
+
+  .navbar-dialog__container {
+    @apply flex flex-col h-full
+  }
+
+  .navbar-dialog__header {
+    @apply flex justify-end
+  }
+
+  .navbar__link-list--mobile {
+    @apply flex-col flex-1
+  }
+
+  .navbar-dialog__footer {
+    @apply flex flex-col gap-4
+  }
+
+  .navbar__cart-link {
+    @apply flex items-center gap-2
+  }
+
+  .navbar__user-link {
+    @apply flex items-center gap-2
   }
 
   .showcase {
