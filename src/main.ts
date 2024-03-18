@@ -9,7 +9,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 // Configura os componentes
-await (async () => {
+void (async () => {
   await setCategories()
 
   await setupNavbar()
